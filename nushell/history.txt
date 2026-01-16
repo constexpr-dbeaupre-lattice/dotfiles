@@ -271,3 +271,142 @@ ls
 cd $env.appdata
 clear
 cd 
+cp -r AppData\Roaming\nushell\ dotfiles\
+cd dotfiles\
+git status
+git add nushell\
+git status
+git commit -m "Added nushell config to dotfiles."
+git config --global user.name "David-Alexandre Beaupre"
+git config --global user.email david-alexandre.beaupre@latticesemi.com
+git commit -m "Added nushell config to dotfiles."
+git staus
+git status
+git commit --amend --reset-author
+git push
+clear
+ff
+fj
+ls
+fj
+ff
+cd
+cd $env.appdata
+cd nushell\
+nvim scripts\fj.nu
+source config.nu
+fj
+nvim scripts\fj.nu
+ls
+nvim nushell\scripts\fj.nu
+git status
+git add .
+git commit -m "Remove --env flag in script."
+git push
+fd --type f | fzf
+rg "fish" | fzf
+rg "admin" | fzf
+rg -i "admin" | fzf
+rg admin | fzf
+rg scripts | fzf
+clear
+fj
+ced
+cd
+ls
+clear
+git clone https://github.com/LSCC-LML/sensai-sdk.git
+git status
+git config --system core.longpaths true
+git config --global core.longpaths true
+cd sensai-sdk\
+git restore --source=HEAD :/
+ls
+git pull
+git status
+clear
+cd ..
+rm -r sensai-sdk\
+git clone https://github.com/LSCC-LML/sensai-sdk.git
+cd sensai-sdk\
+ls
+clear
+git status
+clear
+conda
+clear
+scoop install miniconda3
+conda --version
+conda init nushell
+cd $env.appdata
+cd nushell\
+nvim config.nu
+conda
+conda --version
+which conda
+conda activate
+conda init
+cd $env.appdata
+cd nushell\
+nvim config.nu
+cd $env.appdata
+cd n
+cd nushell\
+nvim config.nu
+exit
+conda --version
+cd sensai-sdk\
+nvim Readme.txt
+ls
+cd sensai-sdk\
+conda env create --name sensai-dev --file conda\sensai-windows.yml
+conda activate sensai-dev
+conda init 
+conda activate sensai-dev
+conda init nushell
+conda init bash
+cd sensai-sdk\
+conda activate sensai-dev
+conda info
+$nu.env-path
+cd $env.appdata
+cd nushell\
+ls
+cd scripts\
+nvim conda.nu
+cd ..
+nvim env.nu
+ls
+cd sensai-sdk\
+conda activate sensai-dev
+nvim ../AppData/Roaming/nushell/scripts/conda.nu
+conda activate sensai-dev
+nvim ../AppData/Roaming/nushell/scripts/conda.nu
+nvim AppData\Roaming\nushell\scripts\conda.nu
+exit
+nvim AppData\Roaming\nushell\scripts\conda.nu
+exit
+conda activate sensai-dev
+nvim AppData\Roaming\nushell\scripts\conda.nu
+exit
+conda activate sensai-dev
+conda info --envs --json | from json
+conda activate sensai-dev
+nvim AppData\Roaming\nushell\scripts\conda.nu
+exit
+conda activate sensai-dev
+nvim AppData\Roaming\nushell\scripts\conda.nu
+exit
+conda activate sensai-dev
+cd sensai-sdk\
+cd
+fj
+ls
+fj
+ff
+fj
+nvim AppData\Roaming\nushell\scripts\fj.nu
+nvim AppData\Roaming\nushell\scripts\ff.nu
+nvim AppData\Roaming\nushell\scripts\conda.nu
+nvim AppData\Roaming\nushell\scripts\ff.nu
+nvim AppData\Roaming\nushell\scripts\fj.nu

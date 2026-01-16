@@ -1,4 +1,4 @@
-def ff [] {
+def --env ff [] {
     let search_dirs = [
         "C:/Users/dbeaupre/notes",
         "C:/Users/dbeaupre/dotfiles"
