@@ -1,0 +1,273 @@
+ls
+cd Documents\notes\
+cd ../../
+clear
+which nu
+ls
+pytohn
+python
+git status
+clear
+$nu.config-path
+nvim C:/Users/dbeaupre/AppData/Roaming/nushell/config.nu
+exit
+ls
+nvim
+ls
+nvim
+fzf
+fd 
+scoop install fzf
+fzf
+fd | fzf
+fd | fzf > cd
+fd | fzf | cd
+clear
+fd | fzf
+ls
+cd $env:localappdata
+cd %localappdata%
+cd $env.localappdata
+ls
+cd $env.appdata
+ls
+cd nushell\
+ls
+mkdir scripts
+cd scripts\
+ls
+nvim fzd.nu
+cd ..
+nvim config.nu
+source config.nu
+$nu.config-path
+nvim config.nu
+source config.nu
+fzd
+cd ~
+fzd
+cd $env.appdata
+cd nushell\scripts\
+ls
+nvim fzv.nu
+cd ..
+nvim config.nu
+source config.nu
+ls scripts\
+nvim config.nu
+source config.nu
+fzv
+ls
+nvim scripts\fzv.nu
+source config.nu
+fzv
+source config.nu
+cd
+fzv
+fzd
+fzv
+cd $env.appdata
+cd nushell\scripts\
+ls
+nvim fzv.nu
+source config.nu
+cd ..
+source config.nu
+fzv
+nvim scripts\fzv.nu
+cat scripts\fzv.nu
+nvim scripts\fzv.nu
+fd --type f --hidden --exclude .git . "C:/Users/dbeaupre/Documents" | fzf --height 60% --layout=reverse --border | str trim
+nvim scripts\fzv.nu
+source config.nu
+fzb
+fzv
+nvim scripts\fzv.nu
+source config.nu
+fzv
+ls
+ls scripts\
+nvim scripts\fzv.nu
+source config.nu
+fzv
+nvim scripts\fzv.nu
+source config.nu
+fzv
+nvim scripts\fzv.nu
+source config.nu
+fzv
+nvim scripts\fzv.nu
+source config.nu
+fzv
+fd --type f --hidden --exclude .git . ["C:/Users/dbeaupre/Documents", "C:/Users/dbeaupre/Desktop"] | fzf --height 60% --layout=reverse --border | str trim
+fd --type f --hidden --exclude .git . ...["C:/Users/dbeaupre/Documents", "C:/Users/dbeaupre/Desktop"] | fzf --height 60% --layout=reverse --border | str trim
+nvim scripts\fzv.nu
+source config.nu
+fzv
+nvim scripts\fzv.nu
+source config.nu
+nvim scripts\fzv.nu
+fzv
+source scripts\fzv.nu
+nvim scripts\fzv.nu
+source scripts\fzv.nu
+fzv
+nvim scripts\fzv.nu
+source scripts\fzv.nu
+fzv
+source config.nu
+fzv
+fzd
+ls
+cd neovim-config\
+ls
+nvim init.lua
+cd $env.localappdata
+ls
+cd nvim-data\
+ls
+cd lazy\
+ls
+cd nvim-treesitter\
+ls
+nvim Makefile
+ls runtime\
+ls runtime\queries\
+ls 
+ls plugin\
+ls scripts\
+cd ..
+ls
+cd ..
+ls
+cd site\
+ls
+cd parser\
+ls
+nvim
+clear
+cd
+ls
+clear
+ls
+cd Documents\notes\
+nvim installation.md
+cd ..
+rm -r notes\
+cd ..
+ls
+clear
+ls
+git clone https://github.com/constexpr-dbeaupre-lattice/notes.git
+https://github.com/constexpr-dbeaupre-lattice/dotfiles.git
+git clone https://github.com/constexpr-dbeaupre-lattice/dotfiles.git
+ls
+rm -r neovim-config\
+clear
+ls
+cd notes\
+cd ..
+ls
+clear
+ls
+rm -r $env.localappdata/nvim
+cd $env.localappdata
+ls
+rm -r nvim nvim-data\
+ls
+cd $env.userprofile
+ls
+cp -r dotfiles\nvim\ $env.localappdata
+cd $env.localappdata
+ls
+ls nvim\
+cargo install --locked tree-sitter-cli
+cargo --version
+nvim $nu.config-path
+source config.nu
+$nu.config-path
+cd ../Roaming/nushell/
+source config.nu
+nvim config.nu
+source config.nu
+cargo --version
+clear
+cd
+cargo install --locked tree-sitter-cli
+cargo --version
+cargo install --locked tree-sitter-cli
+clear
+nvim
+cd ../Roaming/nushell/
+cd $env.appdata
+cd nushell\
+nvim
+source config.nu
+fzv
+nvim scripts\fzv.nu
+ff 
+nvim scripts\fzv.nu
+cd scripts\
+ls
+mv fzv.nu ff.nu
+cd ..
+nvim config.nu
+source config.nu
+ff
+nvim scripts\ff.nu
+source config.nu
+ff
+source config.nu
+ff
+nvim scripts\ff.nu
+cd
+ff
+cd $env.appdata
+cd nushell\
+ls
+ls scripts\
+nvim config.nu
+fc
+fj
+fg
+nvim scripts\fzd.nu
+mv scripts\fzd.nu scripts/fg.nu
+nvim scripts\fg.nu
+nvim scripts\ff.nu
+nvim scripts\fg.nu
+nvim config.nu
+fg
+source config.nu
+fg
+ff
+fg
+nvim scripts\fg.nu
+source config.nu
+fg
+nvim scripts\fg.nu
+fd --type d --max-depth 1 --exclude .git ...["C:/Users/dbeaupre/notes", "C:/Users/dbeaupre/dotfiles"] | fzf --height 60% --layout=reverse --border | str trim
+fd --type d --max-depth 1 --exclude .git ...["C:/Users/dbeaupre/notes", "C:/Users/dbeaupre/"] | fzf --height 60% --layout=reverse --border | str trim
+fd . --type d --max-depth 1 --exclude .git "C:/Users/dbeaupre/" | fzf --height 60% --layout=reverse --border | str trim
+fd . --type d --max-depth 2 --exclude .git "C:/Users/dbeaupre/" | fzf --height 60% --layout=reverse --border | str trim
+nvim scripts\fg.nu
+source config.nu
+fg
+nvim scripts\fg.nu
+fd . --type d --max-depth 1 --exclude .git "C:/Users/dbeaupre" | fzf --height 60% --layout=reverse --border | str trim
+nvim scripts\fg.nu
+mv scripts\fg.nu scripts/fj.nu
+ls scripts\
+source config.nu
+nvim config.nu
+source config.nu
+fj
+nu config
+clear
+ls
+cd
+clar
+clear
+ls
+cd $env.appdata
+clear
+cd 
