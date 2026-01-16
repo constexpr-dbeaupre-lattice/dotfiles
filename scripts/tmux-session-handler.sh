@@ -2,6 +2,8 @@
 
 DIRECTORIES=(
 	"$HOME"
+	"$HOME/dotfiles"
+	"$HOME/notes"
 	"$HOME/scripts"
 )
 
