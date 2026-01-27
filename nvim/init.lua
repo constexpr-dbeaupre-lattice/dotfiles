@@ -130,6 +130,27 @@ require('lazy').setup({
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {},
+  },
+  {
+    'neovim/nvim-lspconfig',
+    config = function()
+      vim.lsp.enable({'lua_ls', 'ruff', 'ty'})
+    end
+  },
+  {
+    'saghen/blink.cmp',
+    version = '1.*',
+    ---@module 'blink.cmp'
+    ---@type blink.cmp.Config
+    opts = {
+      keymap = { preset = 'default' },
+      completion = { documentation = { auto_show = false } },
+      sources = {
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
+      },
+      fuzzy = { implementation = "prefer_rust_with_warning" }
+    },
+    opts_extend = { "sources.default" }
   }
 })
 
@@ -160,19 +181,3 @@ vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'bash', 'diff', 'fish', 'markdown', 'lua', 'rust', 'typst', 'c', 'cpp', 'python' },
   callback = function() vim.treesitter.start() end,
 })
-
-vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('my.lsp', {}),
-  callback = function(args)
-    local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-    if client:supports_method('textDocument/completion') then
-      -- Optional: trigger autocompletion on EVERY keypress. May be slow!
-      local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
-      client.server_capabilities.completionProvider.triggerCharacters = chars
-      vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
-    end
-  end,
-})
-vim.cmd [[set completeopt+=menuone,noselect,popup]]
-
-vim.lsp.enable({ 'lua_ls', 'pylsp' })
