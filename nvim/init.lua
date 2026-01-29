@@ -134,7 +134,12 @@ require('lazy').setup({
   {
     'neovim/nvim-lspconfig',
     config = function()
-      vim.lsp.enable({'lua_ls', 'ruff', 'ty'})
+      vim.lsp.config('groovyls', {
+        cmd = { 'java', '-jar', 'C:/Users/dbeaupre/AppData/Local/nvim-data/mason/packages/groovy-language-server/build/libs/groovy-language-server-all.jar' },
+        filetypes = { 'groovy' },
+        root_markers = { 'Jenkinsfile', '.git' },
+      })
+      vim.lsp.enable({ 'lua_ls', 'ruff', 'ty', 'groovyls' })
     end
   },
   {
