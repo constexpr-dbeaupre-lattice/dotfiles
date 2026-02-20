@@ -135,7 +135,7 @@ require('lazy').setup({
     'neovim/nvim-lspconfig',
     config = function()
       vim.lsp.config('groovyls', {
-        cmd = { 'java', '-jar', 'C:/Users/dbeaupre/AppData/Local/nvim-data/mason/packages/groovy-language-server/build/libs/groovy-language-server-all.jar' },
+        cmd = { '/home/beaupreda/.local/share/nvim/mason/bin/groovy-language-server' },
         filetypes = { 'groovy' },
         root_markers = { 'Jenkinsfile', '.git' },
       })
@@ -156,6 +156,14 @@ require('lazy').setup({
       fuzzy = { implementation = "prefer_rust_with_warning" }
     },
     opts_extend = { "sources.default" }
+  },
+  {
+    'sindrets/diffview.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    keys = {
+      { '<leader>gd', '<cmd>DiffviewOpen<CR>',  { desc = 'Open diffview.' } },
+      { '<leader>gc', '<cmd>DiffviewClose<CR>', { desc = 'Close diffview.' } }
+    }
   }
 })
 
@@ -181,6 +189,21 @@ vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>', { desc = 'Open Oil' })
 vim.keymap.set('n', '<leader>d', function()
   vim.diagnostic.open_float()
 end, { desc = 'Open float diagnostic.' })
+
+
+vim.filetype.add({
+  extension = {
+    jenkinsfile = 'groovy',
+  },
+  filename = {
+    ['Jenkinsfile'] = 'groovy',
+    ['jenkinsfile'] = 'groovy',
+  },
+  pattern = {
+    ['Jenkinsfile.*'] = 'groovy',
+    ['jenkinsfile.*'] = 'groovy',
+  },
+})
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'bash', 'diff', 'fish', 'markdown', 'lua', 'rust', 'typst', 'c', 'cpp', 'python' },
