@@ -111,6 +111,7 @@ require('lazy').setup({
           cwd = vim.fn.stdpath('config')
         }
       end, { desc = 'Telescope find Neovim config files.' })
+      vim.keymap.set('n', '<leader>gs', require('telescope.builtin').git_status, { desc = 'Lists current changes.' })
     end,
   },
   {
@@ -158,12 +159,19 @@ require('lazy').setup({
     opts_extend = { "sources.default" }
   },
   {
-    'sindrets/diffview.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    keys = {
-      { '<leader>gd', '<cmd>DiffviewOpen<CR>',  { desc = 'Open diffview.' } },
-      { '<leader>gc', '<cmd>DiffviewClose<CR>', { desc = 'Close diffview.' } }
-    }
+    'lewis6991/gitsigns.nvim',
+    opts = {
+      on_attach = function(bufnr)
+        local gitsigns = require 'gitsigns'
+
+        vim.keymap.set('n', '<leader>gn', function() gitsigns.nav_hunk 'next' end,
+          { buffer = bufnr, desc = 'Next hunk.' })
+        vim.keymap.set('n', '<leader>gp', function() gitsigns.nav_hunk 'prev' end,
+          { buffer = bufnr, desc = 'Previous hunk.' })
+        vim.keymap.set('n', '<leader>gb', gitsigns.blame_line, { buffer = bufnr, desc = 'Blame line.' })
+        vim.keymap.set('n', '<leader>gd', gitsigns.diffthis, { buffer = bufnr, desc = 'Diff against index.' })
+      end,
+    },
   }
 })
 
