@@ -169,7 +169,7 @@ require('lazy').setup({
         vim.keymap.set('n', '<leader>gp', function() gitsigns.nav_hunk 'prev' end,
           { buffer = bufnr, desc = 'Previous hunk.' })
         vim.keymap.set('n', '<leader>gb', gitsigns.blame_line, { buffer = bufnr, desc = 'Blame line.' })
-        vim.keymap.set('n', '<leader>gd', gitsigns.diffthis, { buffer = bufnr, desc = 'Diff against index.' })
+        vim.keymap.set('n', '<leader>tb', gitsigns.toggle_current_line_blame, { buffer = bufnr, desc = 'Toggle line blaming.' })
       end,
     },
   }
