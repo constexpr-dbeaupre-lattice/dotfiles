@@ -31,8 +31,8 @@ The following only apply when working in Python project (or with Python files).
 - Follow PEP8 style.
 - Always use type hints.
 - Avoid the use of `Any` as a type hint.
-- Use `uv run ruff check` in the project's root directory for linting.
-- Use `uv run mypy` to verify type hints.
+- Use `uvx ruff check` in the project's root directory for linting.
+- Use `uvx mypy` to verify type hints.
 ### Testing
 - Use `pytest` as the testing framework.
 - Always add unit tests for code added.
