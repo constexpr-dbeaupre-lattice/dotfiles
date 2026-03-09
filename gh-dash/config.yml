@@ -82,6 +82,13 @@ keybindings:
           name: lazygit
           command: >
               cd {{.RepoPath}}; lazygit
+    prs:
+        - key: C
+          name: reviews
+          command: >
+              tmux new-window -n {{.RepoName}}
+              'nvim -c
+              ":silent Octo pr edit {{.PrNumber}}"'
 repoPaths: {}
 theme:
     ui:
