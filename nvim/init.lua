@@ -46,7 +46,7 @@ require('lazy').setup({
   {
     'rebelot/kanagawa.nvim',
     config = function()
-      vim.cmd.colorscheme('kanagawa-dragon')
+      vim.cmd.colorscheme('kanagawa-wave')
     end
   },
   {
@@ -159,30 +159,11 @@ require('lazy').setup({
     opts_extend = { "sources.default" }
   },
   {
-    'pwntester/octo.nvim',
-    cmd = 'Octo',
-    opts = {
-      picker = 'telescope',
-      enable_builtin = true,
-    },
+    'sindrets/diffview.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     keys = {
-      { '<leader>oi', '<CMD>Octo issue list<CR>', desc = 'List GitHub Issues', },
-      { '<leader>op', '<CMD>Octo pr list<CR>',    desc = 'List GitHub PullRequests', },
-      { '<leader>od', '<CMD>Octo discussion list<CR>', desc = 'List GitHub Discussions',
-      },
-      { '<leader>on', '<CMD>Octo notification list<CR>', desc = 'List GitHub Notifications', },
-      {
-        '<leader>os',
-        function()
-          require('octo.utils').create_base_search_command { include_current_repo = true }
-        end,
-        desc = 'Search GitHub',
-      },
-    },
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope.nvim',
-      'nvim-tree/nvim-web-devicons',
+      { '<leader>gd', '<cmd>DiffviewOpen<CR>',  { desc = 'Open diffview.' } },
+      { '<leader>gc', '<cmd>DiffviewClose<CR>', { desc = 'Close diffview.' } }
     },
   }
 })
