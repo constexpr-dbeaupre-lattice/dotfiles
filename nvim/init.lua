@@ -82,6 +82,18 @@ require('lazy').setup({
               ['dd'] = require('telescope.actions').delete_buffer
             },
           },
+          color_devicons = true,
+          sorting_strategy = "ascending",
+          -- No borders.
+          borderchars = { "", "", "", "", "", "", "", "", },
+          path_displays = { "smart" },
+          layout_strategy = 'horizontal',
+          layout_config = {
+            height = 128,
+            width = 512,
+            prompt_position = "top",
+            preview_cutoff = 64,
+          }
         },
         extensions = {
           ['ui-select'] = {
@@ -207,6 +219,6 @@ vim.filetype.add({
 })
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'bash', 'diff', 'fish', 'markdown', 'lua', 'rust', 'typst', 'c', 'cpp', 'python' },
+  pattern = { 'bash', 'diff', 'fish', 'markdown', 'lua', 'rust', 'typst', 'c', 'cpp', 'python', 'vimdoc' },
   callback = function() vim.treesitter.start() end,
 })
