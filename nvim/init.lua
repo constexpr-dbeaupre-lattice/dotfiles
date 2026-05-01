@@ -46,7 +46,7 @@ require('lazy').setup({
   {
     'rebelot/kanagawa.nvim',
     config = function()
-      vim.cmd.colorscheme('kanagawa-lotus')
+      vim.cmd.colorscheme('kanagawa-dragon')
     end
   },
   {
@@ -181,6 +181,7 @@ require('lazy').setup({
 })
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<leader>h', '<c-]>')
 
 vim.keymap.set('n', '<leader>fl', function()
   local opts = {
