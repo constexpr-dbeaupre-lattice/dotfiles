@@ -124,6 +124,8 @@ require('lazy').setup({
         }
       end, { desc = 'Telescope find Neovim config files.' })
       vim.keymap.set('n', '<leader>gs', require('telescope.builtin').git_status, { desc = 'Lists current changes.' })
+      vim.keymap.set('n', '<leader>fi', require('telescope.builtin').lsp_document_symbols,
+        { desc = 'Lists document symbols.' })
     end,
   },
   {
@@ -152,7 +154,20 @@ require('lazy').setup({
         filetypes = { 'groovy' },
         root_markers = { 'Jenkinsfile', '.git' },
       })
-      vim.lsp.enable({ 'lua_ls', 'ruff', 'ty', 'groovyls' })
+      vim.lsp.enable({ 'lua_ls', 'marksman', 'ruff', 'ty', 'groovyls' })
+
+      vim.api.nvim_create_autocmd('LspAttach', {
+        callback = function(args)
+          local opts = { buffer = args.buf, silent = true }
+          vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+          vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+          vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+          vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+          vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+          vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+          vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+        end,
+      })
     end
   },
   {
@@ -174,7 +189,7 @@ require('lazy').setup({
     'sindrets/diffview.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     keys = {
-      { '<leader>gd', '<cmd>DiffviewOpen<CR>',  { desc = 'Open diffview.' } },
+      { '<leader>go', '<cmd>DiffviewOpen<CR>',  { desc = 'Open diffview.' } },
       { '<leader>gc', '<cmd>DiffviewClose<CR>', { desc = 'Close diffview.' } }
     },
   }
